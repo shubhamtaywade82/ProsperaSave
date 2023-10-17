@@ -32,3 +32,8 @@ Style/ClassAndModuleChildren:
 
 Layout/ArgumentAlignment:
   EnforcedStyle: with_fixed_indentation 
+
+# RSpec configuration
+RSpec/ExampleLength:
+  Max: 10 # Adjust the maximum example length as per your project's guidelines
+  CountKeywords: false # Set to true to count 'it' and 'specify' as part of the length
