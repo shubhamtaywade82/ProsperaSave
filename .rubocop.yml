@@ -21,3 +21,14 @@ AllCops:
     - 'tmp/**/*'
     - 'vendor/**/*'
   TargetRubyVersion: 3.2
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+  Exclude:
+    - 'app/channels/**/*'
+
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation 
