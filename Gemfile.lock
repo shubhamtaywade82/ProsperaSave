@@ -81,8 +81,11 @@ GEM
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
+    brakeman (6.0.1)
     builder (3.2.4)
     childprocess (4.1.0)
+    code_analyzer (0.5.5)
+      sexp_processor
     colorize (0.8.1)
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
@@ -103,6 +106,7 @@ GEM
     drb (2.1.1)
       ruby2_keywords
     erubi (1.12.0)
+    erubis (2.7.0)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.2.0)
@@ -129,6 +133,7 @@ GEM
       railties (>= 6.0.0)
     json (2.6.3)
     jwt (2.7.1)
+    kwalify (0.7.2)
     language_server-protocol (3.17.0.3)
     loofah (2.21.4)
       crass (~> 1.0.2)
@@ -199,6 +204,14 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
+    rails_best_practices (1.23.2)
+      activesupport
+      code_analyzer (~> 0.5.5)
+      erubis
+      i18n
+      json
+      require_all (~> 3.0)
+      ruby-progressbar
     railties (7.1.1)
       actionpack (= 7.1.1)
       activesupport (= 7.1.1)
@@ -215,9 +228,14 @@ GEM
       redis-client (>= 0.9.0)
     redis-client (0.17.0)
       connection_pool
+    reek (6.1.4)
+      kwalify (~> 0.7.0)
+      parser (~> 3.2.0)
+      rainbow (>= 2.0, < 4.0)
     regexp_parser (2.8.2)
     reline (0.3.9)
       io-console (~> 0.5)
+    require_all (3.0.0)
     rexml (3.2.6)
     rspec-core (3.12.2)
       rspec-support (~> 3.12.0)
@@ -306,6 +324,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
+  brakeman
   cssbundling-rails
   database_cleaner
   debug
@@ -320,7 +339,9 @@ DEPENDENCIES
   pgcrypto
   puma (>= 5.0)
   rails (~> 7.1.1)
+  rails_best_practices
   redis (>= 4.0.1)
+  reek
   rspec-rails
   rubocop
   rubocop-performance
