@@ -56,6 +56,7 @@ gem 'bootsnap', require: false
 group :development, :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails'
+  gem 'faker'
   gem 'rspec-rails'
   gem 'rubocop', require: false
   gem 'rubocop-performance', require: false
