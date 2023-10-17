@@ -34,7 +34,7 @@
 
 CommitMsg:
   ALL:
-    # requires_files: false
+    requires_files: false
     quiet: false
 EmptyMessage:
   enabled: true
