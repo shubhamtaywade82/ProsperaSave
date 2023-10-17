@@ -54,6 +54,7 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
+  gem 'fasterer'
   gem 'overcommit'
   gem 'database_cleaner'
   gem 'factory_bot_rails'

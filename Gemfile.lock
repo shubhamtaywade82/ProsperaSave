@@ -83,6 +83,7 @@ GEM
       msgpack (~> 1.2)
     builder (3.2.4)
     childprocess (4.1.0)
+    colorize (0.8.1)
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
     crass (1.0.6)
@@ -109,6 +110,9 @@ GEM
       railties (>= 5.0.0)
     faker (3.2.1)
       i18n (>= 1.8.11, < 2)
+    fasterer (0.10.1)
+      colorize (~> 0.7)
+      ruby_parser (>= 3.19.1)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -263,6 +267,9 @@ GEM
       rubocop-factory_bot (~> 2.22)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
+    ruby_parser (3.20.3)
+      sexp_processor (~> 4.16)
+    sexp_processor (4.17.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -304,6 +311,7 @@ DEPENDENCIES
   debug
   factory_bot_rails
   faker
+  fasterer
   jbuilder
   jsbundling-rails
   jwt
