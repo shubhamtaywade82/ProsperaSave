@@ -1,22 +1,44 @@
 # frozen_string_literal: true
 
 class Users::SessionsController < ApplicationController
+  skip_before_action :authenticate!
+
   def new; end
 
   def create
-    # Authenticate the user here
-    # If authentication is successful, generate a JWT token
-    user = User.find_by(email: params[:email])
+    user = User.find_by(email: session_params[:email])
 
-    if user&.authenticate(params[:password])
-      payload = { user_id: user.id }
-      token = JwtService.encode(payload)
-
-      render json: { token: }
+    if authenticate_user(user)
+      log_user_in(user)
     else
-      render json: { error: 'Invalid credentials' }, status: :unauthorized
+      handle_failed_login
     end
   end
 
-  def destroy; end
+  def destroy
+    session.delete(:jwt_token)
+    redirect_to sessions_path, notice: 'Logged out successfully!'
+  end
+
+  private
+
+  def session_params
+    params.require(:session).permit(:email, :password)
+  end
+
+  def authenticate_user(user)
+    user&.authenticate(session_params[:password])
+  end
+
+  def log_user_in(user)
+    payload = { user_id: user.id }
+    token = JsonWebToken.encode(payload)
+    session[:jwt_token] = token
+    redirect_to root_path, notice: 'Logged in successfully!'
+  end
+
+  def handle_failed_login
+    flash.now[:alert] = 'Invalid credentials'
+    render :new
+  end
 end
