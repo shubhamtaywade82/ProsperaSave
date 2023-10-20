@@ -28,4 +28,9 @@ RSpec.describe User, type: :model do
     user = described_class.new(email: 'duplicate@example.com')
     expect(user).not_to be_valid
   end
+
+  # it 'has a role' do
+  #   user = build(:user, :member)
+  #   expect(user).to be_member
+  # end
 end

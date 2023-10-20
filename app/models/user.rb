@@ -11,4 +11,10 @@ class User < ApplicationRecord
       with: /\A(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}\z/,
       message: 'must include at least one uppercase letter, one lowercase letter, one number, and one special character, and be at least 8 characters long'
     }
+
+  enum role: { member: 'member', admin: 'admin' }
+
+  # def role?(role)
+  #   self.role == role.to_s
+  # end
 end
