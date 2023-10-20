@@ -17,7 +17,7 @@ class Users::SessionsController < ApplicationController
 
   def destroy
     session.delete(:jwt_token)
-    redirect_to sessions_path, notice: 'Logged out successfully!'
+    redirect_to new_session_path, notice: 'Logged out successfully!'
   end
 
   private

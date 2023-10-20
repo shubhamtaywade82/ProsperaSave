@@ -8,18 +8,19 @@
 # where the inspected file is and continue its way up to the root directory.
 #
 # See https://docs.rubocop.org/rubocop/configuration
-require: 
+require:
   - rubocop-rails
   - rubocop-factory_bot
   - rubocop-rspec
 
 AllCops:
+  Enabled: true
   Exclude:
-    - 'db/**/*'
-    - 'config/**/*'
-    - 'bin/**/*'
-    - 'tmp/**/*'
-    - 'vendor/**/*'
+    - "db/**/*"
+    - "config/**/*"
+    - "bin/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
   TargetRubyVersion: 3.2
 
 Style/Documentation:
@@ -28,12 +29,11 @@ Style/Documentation:
 Style/ClassAndModuleChildren:
   EnforcedStyle: compact
   Exclude:
-    - 'app/channels/**/*'
+    - "app/channels/**/*"
 
 Layout/ArgumentAlignment:
-  EnforcedStyle: with_fixed_indentation 
+  EnforcedStyle: with_fixed_indentation
 
 # RSpec configuration
 RSpec/ExampleLength:
   Max: 10 # Adjust the maximum example length as per your project's guidelines
-  CountKeywords: false # Set to true to count 'it' and 'specify' as part of the length
