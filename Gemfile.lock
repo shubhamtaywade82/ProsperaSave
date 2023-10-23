@@ -208,6 +208,10 @@ GEM
       activesupport (= 7.1.1)
       bundler (>= 1.15.0)
       railties (= 7.1.1)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.2.0)
       activesupport (>= 5.0.0)
       minitest
@@ -331,6 +335,8 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -364,6 +370,7 @@ DEPENDENCIES
   pgcrypto
   puma (>= 5.0)
   rails (~> 7.1.1)
+  rails-controller-testing
   rails_best_practices
   redis (>= 4.0.1)
   reek
@@ -377,6 +384,7 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails
   tzinfo-data
+  warden
   web-console
 
 RUBY VERSION

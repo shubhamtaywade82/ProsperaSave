@@ -34,6 +34,11 @@ Style/ClassAndModuleChildren:
 Layout/ArgumentAlignment:
   EnforcedStyle: with_fixed_indentation
 
+#++++++++=======================
+# RSpecs
+
 # RSpec configuration
 RSpec/ExampleLength:
   Max: 10 # Adjust the maximum example length as per your project's guidelines
+RSpec/MultipleExpectations:
+  Max: 5
