@@ -14,7 +14,7 @@ require:
   - rubocop-rspec
 
 AllCops:
-  Enabled: true
+  NewCops: enable
   Exclude:
     - "db/**/*"
     - "config/**/*"

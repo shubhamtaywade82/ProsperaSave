@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe User, type: :model do
+RSpec.describe User do
   it 'is valid with valid attributes' do
     user = described_class.new(attributes_for(:user))
     expect(user).to be_valid
